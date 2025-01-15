@@ -4,6 +4,11 @@ let isCooldown = false; // Prevent spamming
 // Create an audio object
 const audio = new Audio('audio.mp3'); // Replace with your GitHub audio file URL
 
+// Prevent double-click zoom
+document.addEventListener("dblclick", (event) => {
+    event.preventDefault(); // Stop default double-click behavior
+});
+
 // Handle click button event
 document.getElementById("clickButton").addEventListener("click", () => {
     const trump = document.getElementById("trump");
