@@ -1,6 +1,9 @@
 let clickCount = 0;
 let isCooldown = false; // Prevent spamming
 
+// Create an audio object
+const audio = new Audio('audio.mp3'); // Replace with your GitHub audio file URL
+
 // Handle click button event
 document.getElementById("clickButton").addEventListener("click", () => {
     const trump = document.getElementById("trump");
@@ -28,8 +31,9 @@ document.getElementById("clickButton").addEventListener("click", () => {
         isCooldown = false; // Allow the next click
     }, 300);
 
-    // Check if the click count reaches 47
+    // Play audio and show link on the 47th click
     if (clickCount === 47) {
+        audio.play(); // Play the audio file
         generatedLink.style.display = "block"; // Show the link
     }
 });
