@@ -1,4 +1,4 @@
-document.getElementById("actionButton").addEventListener("click", () => {
+document.getElementById("clickableTitle").addEventListener("click", () => {
     const trump = document.getElementById("trump");
     const kamala = document.getElementById("kamala");
 
