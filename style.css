@@ -41,7 +41,7 @@ body {
 
 #surpriseText {
     font-size: 14px; /* Small size */
-    color: black;
+    color: red; /* Changed to red */
     margin-top: 5px;
     position: relative;
     right: -100px; /* Shift with click meter */
