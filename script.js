@@ -20,15 +20,15 @@ document.getElementById("clickButton").addEventListener("click", () => {
     clickMeter.textContent = `Clicks: ${clickCount}`;
 
     // Action: Move images forward and backward
-    trump.style.transform = "translateX(15px) scale(1.05)";
-    kamala.style.transform = "translateX(-15px) scale(0.95)";
+    trump.style.transform = "translateX(20px) scale(1.1)";
+    kamala.style.transform = "translateX(-20px) scale(0.9)";
 
-    // Reset animations after 300 milliseconds
+    // Reset animations after 200 milliseconds (shorter cooldown)
     setTimeout(() => {
         trump.style.transform = "translateX(0) scale(1)";
         kamala.style.transform = "translateX(0) scale(1)";
         isCooldown = false; // Allow the next click
-    }, 300);
+    }, 200);
 
     // Play audio on the 47th click
     if (clickCount === 47) {
