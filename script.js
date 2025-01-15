@@ -9,7 +9,6 @@ document.getElementById("clickButton").addEventListener("click", () => {
     const trump = document.getElementById("trump");
     const kamala = document.getElementById("kamala");
     const clickMeter = document.getElementById("clickMeter");
-    const generatedLink = document.getElementById("generatedLink");
 
     if (isCooldown) return; // Prevent action during cooldown
     isCooldown = true;
@@ -24,16 +23,15 @@ document.getElementById("clickButton").addEventListener("click", () => {
     trump.style.transform = "translateX(15px) scale(1.05)";
     kamala.style.transform = "translateX(-15px) scale(0.95)";
 
-    // Reset animations after 300 milliseconds (shorter cooldown)
+    // Reset animations after 300 milliseconds
     setTimeout(() => {
         trump.style.transform = "translateX(0) scale(1)";
         kamala.style.transform = "translateX(0) scale(1)";
         isCooldown = false; // Allow the next click
     }, 300);
 
-    // Play audio and show link on the 47th click
+    // Play audio on the 47th click
     if (clickCount === 47) {
         audio.play(); // Play the audio file
-        generatedLink.style.display = "block"; // Show the link
     }
 });
