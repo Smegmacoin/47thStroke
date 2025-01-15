@@ -32,6 +32,6 @@ document.getElementById("clickableTitle").addEventListener("click", () => {
 
     // Check if the click count reaches 47
     if (clickCount === 47) {
-        generatedLink.style.display = "block";
+        generatedLink.style.display = "block"; // Show the link
     }
 });
