@@ -8,45 +8,35 @@ body {
 }
 
 .container {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-.instructions {
-    position: relative;
-    margin-bottom: -10px; /* Adjust spacing above title */
-}
-
-.instructions p {
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-    margin: 0;
-}
-
-.arrow-down {
-    width: 0;
-    height: 0;
-    margin: 0 auto;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid red;
-}
-
-#clickableTitle {
+#title {
     font-size: 50px;
     color: red;
-    cursor: pointer;
-    text-decoration: underline;
     margin-bottom: 20px;
+}
+
+#clickButton {
+    font-size: 24px;
+    padding: 10px 20px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    right: -100px; /* Shift button to the right */
 }
 
 #clickMeter {
     font-size: 32px;
-    color: red; /* Changed to red */
+    color: red;
     font-weight: bold;
     margin-top: 10px;
     position: relative;
-    left: 50px; /* Shifted to the right */
+    right: -100px; /* Shift meter to the right */
 }
 
 .image-container {
@@ -59,13 +49,13 @@ body {
 }
 
 #trump {
-    width: 350px; /* Enlarge Image 1 */
+    width: 350px; /* Image 1 size */
     height: auto;
     transition: transform 0.5s, opacity 0.5s, translate 0.5s;
 }
 
 #kamala {
-    width: 200px; /* Shrink Image 2 */
+    width: 200px; /* Image 2 size */
     height: auto;
     margin-top: -100px; /* Overlap Image 1 */
     margin-left: 50px; /* Shift Image 2 to the right */
