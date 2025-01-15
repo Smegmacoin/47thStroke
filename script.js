@@ -1,8 +1,8 @@
 let clickCount = 0;
 let isCooldown = false; // Prevent spamming
 
-// Handle title click event
-document.getElementById("clickableTitle").addEventListener("click", () => {
+// Handle click button event
+document.getElementById("clickButton").addEventListener("click", () => {
     const trump = document.getElementById("trump");
     const kamala = document.getElementById("kamala");
     const clickMeter = document.getElementById("clickMeter");
