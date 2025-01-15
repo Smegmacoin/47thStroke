@@ -30,6 +30,17 @@ body {
     right: -100px; /* Shift button to the right */
 }
 
+#clickButton::before {
+    content: ''; /* Invisible buffer */
+    position: absolute;
+    top: -10px; /* Extend clickable area upwards */
+    left: -10px; /* Extend clickable area leftwards */
+    right: -10px; /* Extend clickable area rightwards */
+    bottom: -10px; /* Extend clickable area downwards */
+    background: transparent; /* Invisible buffer */
+    z-index: -1; /* Keep it behind the button */
+}
+
 #clickMeter {
     font-size: 32px;
     color: red;
