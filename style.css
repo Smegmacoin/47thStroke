@@ -31,20 +31,21 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
-    left: -50px; /* Move images further to the left */
-    top: 50px; /* Bring images up */
+    left: -50px; /* Keep Image 1 on the left */
+    top: 50px; /* Position both images */
 }
 
 #trump {
-    width: 350px; /* Enlarge Image 1 */
+    width: 350px; /* Image 1 size */
     height: auto;
     transition: transform 0.5s, opacity 0.5s, translate 0.5s;
 }
 
 #kamala {
-    width: 250px; /* Shrink Image 2 */
+    width: 200px; /* Shrink Image 2 */
     height: auto;
-    margin-top: -100px; /* Overlap Image 1 */
+    margin-top: -100px; /* Keep overlap with Image 1 */
+    margin-left: 50px; /* Shift Image 2 to the right */
     transition: transform 0.5s, opacity 0.5s, translate 0.5s;
 }
 
