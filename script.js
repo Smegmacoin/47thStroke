@@ -18,15 +18,15 @@ document.getElementById("clickButton").addEventListener("click", () => {
     clickMeter.textContent = `Clicks: ${clickCount}`;
 
     // Action: Move images forward and backward
-    trump.style.transform = "translateX(20px) scale(1.1)";
-    kamala.style.transform = "translateX(-20px) scale(0.9)";
+    trump.style.transform = "translateX(15px) scale(1.05)";
+    kamala.style.transform = "translateX(-15px) scale(0.95)";
 
-    // Reset animations after 0.5 seconds
+    // Reset animations after 300 milliseconds (shorter cooldown)
     setTimeout(() => {
         trump.style.transform = "translateX(0) scale(1)";
         kamala.style.transform = "translateX(0) scale(1)";
-        isCooldown = false; // Allow next click
-    }, 500);
+        isCooldown = false; // Allow the next click
+    }, 300);
 
     // Check if the click count reaches 47
     if (clickCount === 47) {
