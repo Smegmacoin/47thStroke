@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background: url('IMG_2975.gif') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .container {
