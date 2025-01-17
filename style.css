@@ -1,3 +1,4 @@
+/* General styles for all devices */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -20,7 +21,7 @@ body {
 
 #clickButton {
     font-size: 24px;
-    padding: 20px 40px; /* Large visible button area */
+    padding: 15px 30px; /* Adjusted padding for better sizing */
     color: white;
     background-color: red;
     border: none;
@@ -28,18 +29,7 @@ body {
     cursor: pointer;
     margin-bottom: 10px;
     position: relative;
-    right: -100px; /* Shift button to the right */
-}
-
-#clickButton::before {
-    content: ''; /* Much larger invisible buffer */
-    position: absolute;
-    top: -50px; /* Extend clickable area upwards */
-    left: -50px; /* Extend clickable area leftwards */
-    right: -50px; /* Extend clickable area rightwards */
-    bottom: -50px; /* Extend clickable area downwards */
-    background: transparent; /* Invisible buffer */
-    z-index: -1; /* Keep it behind the button */
+    right: -50px; /* Shift button to the right */
 }
 
 #clickMeter {
@@ -48,15 +38,15 @@ body {
     font-weight: bold;
     margin-top: 10px;
     position: relative;
-    right: -100px; /* Shift meter to the right */
+    right: -50px; /* Shift meter to the right */
 }
 
 #surpriseText {
-    font-size: 14px; /* Small size */
-    color: red; /* Changed to red */
+    font-size: 14px;
+    color: red;
     margin-top: 5px;
     position: relative;
-    right: -100px; /* Shift with click meter */
+    right: -50px;
 }
 
 .image-container {
@@ -64,38 +54,22 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
-    left: -50px; /* Keep Image 1 on the left */
-    top: 50px; /* Position both images */
+    left: -50px;
+    top: 50px;
 }
 
 #trump {
-    width: 350px; /* Image 1 size */
+    width: 300px;
     height: auto;
-    transition: transform 0.3s, opacity 0.3s, translate 0.3s; /* Faster animation */
+    transition: transform 0.3s, opacity 0.3s, translate 0.3s;
 }
 
 #kamala {
-    width: 200px; /* Image 2 size */
+    width: 180px;
     height: auto;
-    margin-top: -100px; /* Overlap Image 1 */
-    margin-left: 50px; /* Shift Image 2 to the right */
-    transition: transform 0.3s, opacity 0.3s, translate 0.3s; /* Faster animation */
-}
-
-#generatedLink {
-    z-index: 1000;
-    position: relative;
-}
-
-#generatedLink a {
-    font-size: 24px;
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#generatedLink a:hover {
-    text-decoration: underline;
+    margin-top: -80px;
+    margin-left: 50px;
+    transition: transform 0.3s, opacity 0.3s, translate 0.3s;
 }
 
 /* Social Media Links Styling */
@@ -108,12 +82,73 @@ body {
 }
 
 .social-icon {
-    width: 50px; /* Icon size */
-    height: auto; /* Maintain aspect ratio */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: transform 0.3s; /* Smooth hover effect */
+    width: 40px; /* Adjust icon size */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .social-icon:hover {
-    transform: scale(1.2); /* Slightly enlarge on hover */
+    transform: scale(1.2);
+}
+
+/* Responsive Design: For screens wider than 768px (tablets & desktops) */
+@media (min-width: 768px) {
+    #clickButton {
+        padding: 20px 40px;
+        right: -100px;
+    }
+
+    #clickMeter {
+        font-size: 36px;
+        right: -100px;
+    }
+
+    #surpriseText {
+        font-size: 16px;
+        right: -100px;
+    }
+
+    #trump {
+        width: 350px;
+    }
+
+    #kamala {
+        width: 200px;
+    }
+
+    .social-icon {
+        width: 50px;
+    }
+}
+
+/* Responsive Design: For large screens (desktops, 1024px and above) */
+@media (min-width: 1024px) {
+    .container {
+        margin-top: 40px;
+    }
+
+    #title {
+        font-size: 60px;
+    }
+
+    #clickButton {
+        padding: 25px 50px;
+    }
+
+    #clickMeter {
+        font-size: 40px;
+    }
+
+    #trump {
+        width: 400px;
+    }
+
+    #kamala {
+        width: 250px;
+    }
+
+    .social-icon {
+        width: 60px;
+    }
 }
