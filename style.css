@@ -59,8 +59,8 @@ body {
     width: 100vw; /* Full screen width */
     height: 100vh; /* Full screen height */
     pointer-events: none; /* Prevent blocking clicks */
-    z-index: 10000; /* Ensure it appears above everything */
-    background: transparent; /* Transparent background */
+    z-index: 9999; /* Ensure it appears above everything */
+    background: transparent; /* Transparent */
 }
 
 /* Image Container */
@@ -71,20 +71,11 @@ body {
     position: fixed;
     left: -50px;
     top: 50px;
-    z-index: 1; /* Ensure it stays below fireworks */
 }
 
 #trump {
     width: 300px;
     height: auto;
-    transition: transform 0.3s, opacity 0.3s, translate 0.3s;
-}
-
-#kamala {
-    width: 180px;
-    height: auto;
-    margin-top: -80px;
-    margin-left: 50px;
     transition: transform 0.3s, opacity 0.3s, translate 0.3s;
 }
 
@@ -95,7 +86,7 @@ body {
     flex-direction: column; /* Align icons vertically */
     align-items: center; /* Default center alignment */
     gap: 15px;
-    z-index: 1; /* Ensure it does not overlap fireworks */
+    z-index: auto; /* Ensure it does not overlap fireworks */
 }
 
 .social-icon {
@@ -130,10 +121,6 @@ body {
         width: 350px;
     }
 
-    #kamala {
-        width: 200px;
-    }
-
     .social-icon {
         width: 50px;
     }
@@ -154,12 +141,6 @@ body {
         width: 400px; /* Adjusted Trump size */
         top: 100px;
         left: 20px;
-    }
-
-    #kamala {
-        width: 250px; /* Adjusted Kamala size */
-        margin-top: -100px;
-        margin-left: 100px; /* Adjust positioning */
     }
 
     #socialLinks {
