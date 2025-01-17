@@ -11,26 +11,38 @@ function launchFireworks() {
         console.error("Fireworks container not found!");
         return;
     }
+
+    // Ensure container is styled correctly
+    container.style.zIndex = "10000";
+    container.style.position = "fixed";
+    container.style.top = "0";
+    container.style.left = "0";
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+    container.style.pointerEvents = "none";
+
     try {
         const fireworks = new Fireworks(container, {
             speed: 2,
             acceleration: 1.05,
             friction: 0.98,
             gravity: 1.5,
-            particles: 100, // Adjust particle count for container size
+            particles: 150, // Adjust particle count for container size
             traceLength: 3,
             flickering: 50,
-            intensity: 30,
-            explosion: 5,
+            intensity: 40,
+            explosion: 8,
             hue: { min: 0, max: 360 },
         });
 
         // Start fireworks effect
         fireworks.start();
+        console.log("Fireworks started!");
 
         // Stop fireworks after 5 seconds
         setTimeout(() => {
             fireworks.stop();
+            console.log("Fireworks stopped.");
         }, 5000);
     } catch (error) {
         console.error("Error initializing fireworks:", error);
