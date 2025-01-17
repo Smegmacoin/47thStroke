@@ -77,7 +77,7 @@ body {
     margin-top: 20px;
     display: flex;
     flex-direction: column; /* Align icons vertically */
-    align-items: center; /* Center align icons */
+    align-items: center; /* Default center alignment */
     gap: 15px; /* Add spacing between icons */
 }
 
@@ -150,5 +150,14 @@ body {
 
     .social-icon {
         width: 60px;
+    }
+}
+
+/* Mobile-Specific Fix: Shift Social Links */
+@media (max-width: 767px) {
+    #socialLinks {
+        margin-left: auto; /* Push the links to the right */
+        margin-right: 20px; /* Add spacing from the right edge */
+        align-items: flex-end; /* Align links to the right */
     }
 }
