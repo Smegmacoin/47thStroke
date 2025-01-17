@@ -7,18 +7,24 @@ const audio = new Audio('audio.mp3'); // Replace with your GitHub audio file URL
 // Fireworks effect function
 function launchFireworks() {
     const container = document.getElementById("fireworks-container");
+    if (!container) {
+        console.error("Fireworks container not found!");
+        return;
+    }
     const fireworks = new Fireworks(container, {
         speed: 2,
         acceleration: 1.05,
         friction: 0.98,
         gravity: 1.5,
-        particles: 100,
+        particles: 100, // Set particles to match container size
         traceLength: 3,
         flickering: 50,
-        explosion: 5,
         intensity: 30,
+        explosion: 5,
         hue: { min: 0, max: 360 },
     });
+
+    // Start fireworks effect
     fireworks.start();
 
     // Stop fireworks after 5 seconds
