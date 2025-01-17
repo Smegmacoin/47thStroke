@@ -12,41 +12,25 @@ function launchFireworks() {
         return;
     }
 
-    // Ensure container is styled correctly
-    container.style.zIndex = "10000";
-    container.style.position = "fixed";
-    container.style.top = "0";
-    container.style.left = "0";
-    container.style.width = "100vw";
-    container.style.height = "100vh";
-    container.style.pointerEvents = "none";
+    const fireworks = new Fireworks(container, {
+        speed: 2,
+        acceleration: 1.05,
+        friction: 0.98,
+        gravity: 1.5,
+        particles: 150,
+        traceLength: 3,
+        flickering: 50,
+        intensity: 40,
+        explosion: 8,
+        hue: { min: 0, max: 360 },
+    });
 
-    try {
-        const fireworks = new Fireworks(container, {
-            speed: 2,
-            acceleration: 1.05,
-            friction: 0.98,
-            gravity: 1.5,
-            particles: 150, // Adjust particle count for container size
-            traceLength: 3,
-            flickering: 50,
-            intensity: 40,
-            explosion: 8,
-            hue: { min: 0, max: 360 },
-        });
+    fireworks.start();
 
-        // Start fireworks effect
-        fireworks.start();
-        console.log("Fireworks started!");
-
-        // Stop fireworks after 5 seconds
-        setTimeout(() => {
-            fireworks.stop();
-            console.log("Fireworks stopped.");
-        }, 5000);
-    } catch (error) {
-        console.error("Error initializing fireworks:", error);
-    }
+    // Stop fireworks after 5 seconds
+    setTimeout(() => {
+        fireworks.stop();
+    }, 5000);
 }
 
 // Prevent double-click zoom
@@ -57,7 +41,6 @@ document.addEventListener("dblclick", (event) => {
 // Handle click button event
 document.getElementById("clickButton").addEventListener("click", () => {
     const trump = document.getElementById("trump");
-    const kamala = document.getElementById("kamala");
     const clickMeter = document.getElementById("clickMeter");
 
     if (isCooldown) return; // Prevent action during cooldown
@@ -69,23 +52,19 @@ document.getElementById("clickButton").addEventListener("click", () => {
     // Update the click meter
     clickMeter.textContent = `Clicks: ${clickCount}`;
 
-    // Action: Move images forward and backward
+    // Action: Move Trump forward and backward
     trump.style.transform = "translateX(20px) scale(1.1)";
-    kamala.style.transform = "translateX(-20px) scale(0.9)";
 
     // Reset animations after 200 milliseconds (shorter cooldown)
     setTimeout(() => {
         trump.style.transform = "translateX(0) scale(1)";
-        kamala.style.transform = "translateX(0) scale(1)";
         isCooldown = false; // Allow the next click
     }, 200);
 
     // Play audio and launch fireworks on the 47th click
     if (clickCount === 47) {
         console.log("47th click reached! Playing audio and launching fireworks.");
-        audio.play().catch((error) => {
-            console.error("Error playing audio:", error);
-        });
-        launchFireworks(); // Trigger fireworks
+        audio.play();
+        launchFireworks();
     }
 });
