@@ -97,3 +97,23 @@ body {
 #generatedLink a:hover {
     text-decoration: underline;
 }
+
+/* Social Media Links Styling */
+#socialLinks {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Align icons vertically */
+    align-items: center; /* Center align icons */
+    gap: 15px; /* Add spacing between icons */
+}
+
+.social-icon {
+    width: 50px; /* Icon size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
