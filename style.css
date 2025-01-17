@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensure background covers the viewport */
+    background-size: cover; /* Ensure full background coverage */
     margin: 0;
     padding: 0;
     touch-action: manipulation; /* Disable double-tap zoom on touch devices */
@@ -21,7 +21,7 @@ body {
 
 #clickButton {
     font-size: 24px;
-    padding: 15px 30px; /* Adjusted padding for better sizing */
+    padding: 15px 30px;
     color: white;
     background-color: red;
     border: none;
@@ -49,6 +49,7 @@ body {
     right: -50px;
 }
 
+/* Image Container */
 .image-container {
     display: flex;
     flex-direction: column;
@@ -92,7 +93,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Responsive Design: For screens wider than 768px (tablets & desktops) */
+/* Responsive Design: For screens wider than 768px (tablets) */
 @media (min-width: 768px) {
     #clickButton {
         padding: 20px 40px;
@@ -122,41 +123,32 @@ body {
     }
 }
 
-/* Responsive Design: For large screens (desktops, 1024px and above) */
+/* Desktop-Specific Adjustments */
 @media (min-width: 1024px) {
     body {
-        background-size: contain; /* Ensure full image is visible */
+        background-size: contain; /* Show full image */
         background-repeat: no-repeat;
     }
 
     .container {
-        margin-top: 40px;
-    }
-
-    #title {
-        font-size: 60px;
-    }
-
-    #clickButton {
-        padding: 25px 50px;
-    }
-
-    #clickMeter {
-        font-size: 40px;
+        margin-top: 60px; /* Adjust spacing for desktop */
     }
 
     #trump {
-        width: 500px; /* Scale up Trump image */
+        width: 500px; /* Larger Trump image */
+        top: 100px; /* Adjust vertical position */
+        left: 20px; /* Adjust horizontal position */
     }
 
     #kamala {
-        width: 350px; /* Scale up Kamala image */
-        margin-top: -120px; /* Adjust overlap */
-        margin-left: 80px; /* Adjust position */
+        width: 350px; /* Larger Kamala image */
+        margin-top: -150px; /* Adjust overlap */
+        margin-left: 100px; /* Adjust positioning */
     }
 
-    .social-icon {
-        width: 60px;
+    #socialLinks {
+        align-items: center; /* Center-align links */
+        margin-top: 50px;
     }
 }
 
