@@ -52,11 +52,10 @@ body {
 /* Fireworks Container */
 #fireworks-container {
     position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for true centering */
-    width: 300px; /* Set a smaller width */
-    height: 300px; /* Set a smaller height */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
     pointer-events: none; /* Prevent blocking clicks */
     z-index: 1000; /* Ensure it appears above everything */
     background: transparent; /* Optional: Debugging visibility */
