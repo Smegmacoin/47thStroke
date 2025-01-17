@@ -59,8 +59,8 @@ body {
     width: 100vw; /* Full screen width */
     height: 100vh; /* Full screen height */
     pointer-events: none; /* Prevent blocking clicks */
-    z-index: 9999; /* Ensure it appears above everything */
-    background: transparent; /* Optional: Debugging visibility */
+    z-index: 10000; /* Ensure it appears above everything */
+    background: transparent; /* Transparent background */
 }
 
 /* Image Container */
@@ -71,7 +71,7 @@ body {
     position: fixed;
     left: -50px;
     top: 50px;
-    z-index: auto; /* Ensure it does not overlap fireworks */
+    z-index: 1; /* Ensure it stays below fireworks */
 }
 
 #trump {
@@ -95,7 +95,7 @@ body {
     flex-direction: column; /* Align icons vertically */
     align-items: center; /* Default center alignment */
     gap: 15px;
-    z-index: auto; /* Ensure it does not overlap fireworks */
+    z-index: 1; /* Ensure it does not overlap fireworks */
 }
 
 .social-icon {
