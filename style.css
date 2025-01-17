@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover; /* Cover entire screen */
+    background-size: cover; /* Ensure full coverage */
     margin: 0;
     padding: 0;
     touch-action: manipulation; /* Disable double-tap zoom on touch devices */
@@ -66,9 +66,9 @@ body {
 }
 
 #kamala {
-    width: 150px; /* Reduced size for better fit */
+    width: 180px;
     height: auto;
-    margin-top: -50px;
+    margin-top: -80px;
     margin-left: 50px;
     transition: transform 0.3s, opacity 0.3s, translate 0.3s;
 }
@@ -77,8 +77,8 @@ body {
 #socialLinks {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Align icons vertically */
+    align-items: center; /* Default center alignment */
     gap: 15px;
 }
 
@@ -115,9 +115,7 @@ body {
     }
 
     #kamala {
-        width: 180px;
-        margin-top: -80px;
-        margin-left: 70px;
+        width: 200px;
     }
 
     .social-icon {
@@ -128,7 +126,7 @@ body {
 /* Desktop-Specific Adjustments */
 @media (min-width: 1024px) {
     body {
-        background-size: cover; /* Ensure full coverage on desktop */
+        background-size: cover; /* Ensure full background coverage */
         background-repeat: no-repeat;
     }
 
@@ -144,12 +142,21 @@ body {
 
     #kamala {
         width: 250px; /* Adjusted Kamala size */
-        margin-top: -100px; /* Adjust overlap */
-        margin-left: 100px; /* Adjust horizontal alignment */
+        margin-top: -100px;
+        margin-left: 100px; /* Adjust positioning */
     }
 
     #socialLinks {
-        align-items: center;
+        align-items: center; /* Center-align for desktop */
         margin-top: 50px;
+    }
+}
+
+/* Mobile-Specific Fix: Shift Social Links */
+@media (max-width: 767px) {
+    #socialLinks {
+        margin-left: auto; /* Push the links to the right */
+        margin-right: 20px; /* Add spacing from the right edge */
+        align-items: flex-end; /* Align links to the right */
     }
 }
