@@ -4,6 +4,29 @@ let isCooldown = false; // Prevent spamming
 // Create an audio object
 const audio = new Audio('audio.mp3'); // Replace with your GitHub audio file URL
 
+// Fireworks effect function
+function launchFireworks() {
+    const container = document.getElementById("fireworks-container");
+    const fireworks = new Fireworks(container, {
+        speed: 2,
+        acceleration: 1.05,
+        friction: 0.98,
+        gravity: 1.5,
+        particles: 100,
+        traceLength: 3,
+        flickering: 50,
+        explosion: 5,
+        intensity: 30,
+        hue: { min: 0, max: 360 },
+    });
+    fireworks.start();
+
+    // Stop fireworks after 5 seconds
+    setTimeout(() => {
+        fireworks.stop();
+    }, 5000);
+}
+
 // Prevent double-click zoom
 document.addEventListener("dblclick", (event) => {
     event.preventDefault(); // Stop default double-click behavior
@@ -35,8 +58,9 @@ document.getElementById("clickButton").addEventListener("click", () => {
         isCooldown = false; // Allow the next click
     }, 200);
 
-    // Play audio on the 47th click
+    // Play audio and launch fireworks on the 47th click
     if (clickCount === 47) {
         audio.play(); // Play the audio file
+        launchFireworks(); // Trigger fireworks
     }
 });
